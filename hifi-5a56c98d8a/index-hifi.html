@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <title>MyZetta — прототип на дизайне</title>
+
+    <!-- ПОЛНОЭКРАННЫЙ РЕЖИМ НА ТЕЛЕФОНЕ.
+         Прототип ставится на домашний экран и открывается без адресной строки
+         и вкладок — как обычное приложение. Для теста это важно: браузерная
+         обвязка напоминает респонденту, что перед ним сайт, и меняет поведение.
+         iOS: Поделиться → «На экран „Домой“». Android: меню → «Установить». -->
+    <link rel="manifest" href="/myzetta-proto-demo/hifi-5a56c98d8a/hifi.webmanifest" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-title" content="MyZetta" />
+    <!-- black-translucent: системная строка ложится ПОВЕРХ содержимого, и
+         брендовый градиент уходит под вырез, как в нативном приложении.
+         Отступ под вырез берут на себя экраны через env(safe-area-inset-top). -->
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="theme-color" content="#1554bf" />
+    <link rel="apple-touch-icon" href="/myzetta-proto-demo/hifi-5a56c98d8a/hifi-icon-apple.png" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <script type="module" crossorigin src="/myzetta-proto-demo/hifi-5a56c98d8a/assets/hifi-u9F2gTsy.js"></script>
+    <link rel="modulepreload" crossorigin href="/myzetta-proto-demo/hifi-5a56c98d8a/assets/doctors-Qfwi0p-u.js">
+    <link rel="stylesheet" crossorigin href="/myzetta-proto-demo/hifi-5a56c98d8a/assets/doctors-Dgihpmma.css">
+    <link rel="stylesheet" crossorigin href="/myzetta-proto-demo/hifi-5a56c98d8a/assets/hifi-BjyKet5Y.css">
+  </head>
+  <body>
+    <div id="root"></div>
+  </body>
+</html>
