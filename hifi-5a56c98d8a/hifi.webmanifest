@@ -1,0 +1,16 @@
+{
+  "name": "MyZetta — прототип",
+  "short_name": "MyZetta",
+  "description": "Кликабельный прототип на финальном дизайне для юзабилити-тестирования",
+  "start_url": "./index-hifi.html#/",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#1554bf",
+  "theme_color": "#1554bf",
+  "lang": "ru",
+  "icons": [
+    { "src": "./hifi-icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "./hifi-icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" }
+  ]
+}

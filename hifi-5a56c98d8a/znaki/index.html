@@ -1,0 +1,561 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<meta name="description" content="Пять вариантов знака «Находкин»: идея, критерии, форма регистрации и носители по каждому.">
+<title>Пять знаков Находкина</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400..800&family=Unbounded:wght@400..700&display=swap">
+<style>
+:root {
+  --ground:#F6F8FB; --surface:#FFFFFF; --paper:#EFF2F7; --paper-ink:#0B1220;
+  --ink:#0B1220; --ink2:#3B4757; --muted:#78859A;
+  --rule:#E1E6EF; --rule-2:#CBD3E0; --accent:#2C6BDA; --shadow:0 1px 2px rgba(11,18,32,.05),0 12px 32px -18px rgba(11,18,32,.28);
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --ground:#080C13; --surface:#101724; --paper:#EAEEF5; --paper-ink:#0B1220;
+    --ink:#E8EDF5; --ink2:#B6C1D1; --muted:#8492A6;
+    --rule:#1C2432; --rule-2:#2B3547; --accent:#79A9FF; --shadow:0 1px 2px rgba(0,0,0,.4),0 16px 40px -20px rgba(0,0,0,.75);
+  }
+}
+:root[data-theme="dark"] {
+  --ground:#080C13; --surface:#101724; --paper:#EAEEF5; --paper-ink:#0B1220;
+  --ink:#E8EDF5; --ink2:#B6C1D1; --muted:#8492A6;
+  --rule:#1C2432; --rule-2:#2B3547; --accent:#79A9FF; --shadow:0 1px 2px rgba(0,0,0,.4),0 16px 40px -20px rgba(0,0,0,.75);
+}
+
+* { box-sizing:border-box; }
+body {
+  margin:0; background:var(--ground); color:var(--ink);
+  font-family:"Golos Text","Golos Text Fallback",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+  font-size:16px; line-height:1.6; -webkit-font-smoothing:antialiased;
+}
+img { max-width:100%; display:block; }
+a { color:inherit; }
+h1,h2,h3,h4 { margin:0; text-wrap:balance; }
+p { margin:0; }
+
+.label {
+  font-size:11px; font-weight:600; letter-spacing:.14em; text-transform:uppercase;
+  color:var(--muted); margin:0;
+}
+
+/* ── каркас ───────────────────────────────────────────── */
+.shell { display:block; }
+@media (min-width:1080px) {
+  .shell { display:grid; grid-template-columns:244px minmax(0,1fr); align-items:start; }
+}
+
+/* ── навигация ────────────────────────────────────────── */
+.rail {
+  position:sticky; top:0; z-index:30; background:var(--ground);
+  border-bottom:1px solid var(--rule);
+}
+.rail-inner { padding:12px clamp(16px,4vw,32px); }
+.rail-title { display:none; }
+.nav { display:flex; gap:6px; overflow-x:auto; scrollbar-width:none; }
+.nav::-webkit-scrollbar { display:none; }
+.nav-item {
+  display:flex; align-items:center; gap:10px; flex:0 0 auto;
+  padding:7px 12px 7px 8px; border-radius:999px; text-decoration:none;
+  border:1px solid transparent; transition:background .18s,border-color .18s;
+}
+.nav-item:hover { background:var(--surface); }
+.nav-item.on { background:var(--surface); border-color:var(--rule-2); }
+.nav-mark {
+  width:30px; height:30px; flex:0 0 30px; border-radius:8px; background:var(--paper);
+  display:grid; place-items:center; padding:4px;
+}
+.nav-mark img { width:100%; height:100%; object-fit:contain; }
+.nav-txt { display:flex; flex-direction:column; line-height:1.25; }
+.nav-txt b { font-size:14px; font-weight:600; letter-spacing:-.01em; }
+.nav-txt i { display:none; }
+.nav-item:focus-visible { outline:2px solid var(--accent); outline-offset:2px; }
+
+@media (min-width:1080px) {
+  .rail {
+    height:100vh; border-bottom:0; border-right:1px solid var(--rule);
+    display:flex; align-items:stretch;
+  }
+  .rail-inner { padding:36px 24px; width:100%; display:flex; flex-direction:column; gap:26px; }
+  .rail-title {
+    display:block; font-family:"Unbounded",sans-serif; font-weight:600;
+    font-size:15px; letter-spacing:-.02em; line-height:1.35;
+  }
+  .rail-title span { display:block; font-family:inherit; }
+  .nav { flex-direction:column; overflow:visible; gap:2px; }
+  .nav-item { border-radius:12px; padding:9px 10px; }
+  .nav-txt i { display:block; font-style:normal; font-size:12px; color:var(--muted); }
+}
+
+/* ── содержимое ───────────────────────────────────────── */
+main { padding:0 clamp(18px,4vw,64px); max-width:1180px; }
+
+.hero { padding:clamp(48px,8vw,104px) 0 clamp(36px,5vw,64px); max-width:760px; }
+.hero h1 {
+  font-family:"Unbounded",sans-serif; font-weight:600;
+  font-size:clamp(30px,5.4vw,50px); line-height:1.08; letter-spacing:-.035em;
+}
+.hero .kicker { margin-bottom:18px; }
+.hero .lede {
+  margin-top:22px; font-size:clamp(16px,1.7vw,18px); color:var(--ink2); max-width:62ch;
+}
+.hero .lede + .lede { margin-top:14px; }
+.hero .lede em { font-style:normal; color:var(--ink); font-weight:600; }
+
+.crits {
+  display:grid; gap:0; margin-top:clamp(32px,4vw,48px);
+  border-top:1px solid var(--rule);
+}
+@media (min-width:720px) { .crits { grid-template-columns:1fr 1fr; } }
+.crit { padding:18px 0 20px; border-bottom:1px solid var(--rule); }
+@media (min-width:720px) {
+  .crit:nth-child(odd) { padding-right:32px; border-right:1px solid var(--rule); }
+  .crit:nth-child(even) { padding-left:32px; }
+}
+.crit h4 { font-size:15px; font-weight:600; letter-spacing:-.01em; }
+.crit p { margin-top:5px; font-size:14px; color:var(--muted); }
+
+/* ── глава ────────────────────────────────────────────── */
+.chapter { padding:clamp(52px,7vw,104px) 0; border-top:1px solid var(--rule); scroll-margin-top:88px; }
+@media (min-width:1080px) { .chapter { scroll-margin-top:24px; } }
+
+.stage {
+  background:var(--paper); color:var(--paper-ink); border-radius:22px;
+  padding:clamp(28px,5vw,56px); display:grid; gap:clamp(24px,4vw,44px);
+  box-shadow:var(--shadow);
+}
+@media (min-width:860px) {
+  .stage { grid-template-columns:minmax(0,1fr) auto; align-items:center; }
+}
+.stage-tag {
+  grid-column:1/-1; font-size:11px; font-weight:600; letter-spacing:.14em;
+  text-transform:uppercase; color:#7C88A0;
+}
+.lockup { width:100%; max-width:520px; height:auto; }
+.sizes { display:flex; flex-direction:column; gap:12px; }
+@media (min-width:860px) {
+  .sizes { border-left:1px solid #D6DCE8; padding-left:clamp(20px,3vw,36px); }
+}
+.sizes .label { color:#7C88A0; }
+.sizes-row { display:flex; align-items:flex-end; gap:16px; height:52px; }
+.sz { display:block; }
+.sz img { display:block; width:100%; height:100%; object-fit:contain; }
+.sz-48 { width:48px; height:48px; }
+.sz-24 { width:24px; height:24px; }
+.sz-16 { width:16px; height:16px; }
+.sizes-note { font-size:12px; color:#8A96AC; font-variant-numeric:tabular-nums; }
+
+.cols { display:grid; gap:clamp(28px,4vw,56px); margin-top:clamp(32px,4vw,56px); }
+@media (min-width:900px) { .cols { grid-template-columns:minmax(0,1.25fr) minmax(0,1fr); } }
+.idea .glance {
+  font-family:"Unbounded",sans-serif; font-weight:500;
+  font-size:clamp(24px,3.4vw,34px); letter-spacing:-.035em; line-height:1.12;
+  margin:10px 0 20px;
+}
+.idea p { font-size:16.5px; color:var(--ink2); max-width:60ch; }
+.idea p + p { margin-top:14px; }
+
+.spec { margin:0; border-top:1px solid var(--rule); }
+.spec-row { padding:16px 0; border-bottom:1px solid var(--rule); }
+.spec dt {
+  font-size:11px; font-weight:600; letter-spacing:.14em; text-transform:uppercase;
+  color:var(--accent);
+}
+.spec dd { margin:7px 0 0; font-size:14.5px; color:var(--ink2); }
+
+.campaign { margin-top:clamp(30px,4vw,52px); }
+.campaign-note { margin:9px 0 16px; font-size:14.5px; color:var(--ink2); max-width:62ch; }
+.posters { display:flex; gap:clamp(8px,1.1vw,14px); align-items:flex-start; }
+.poster { flex-shrink:1; flex-basis:0; min-width:0; }
+.poster-btn {
+  display:block; width:100%; padding:0; border:0; background:var(--surface);
+  border-radius:12px; overflow:hidden; cursor:zoom-in; line-height:0;
+  box-shadow:0 1px 2px rgba(11,18,32,.08);
+}
+.poster-btn img { width:100%; height:auto; display:block; transition:transform .4s cubic-bezier(.2,.7,.3,1); }
+.poster-btn:hover img { transform:scale(1.02); }
+.poster-btn:focus-visible { outline:2px solid var(--accent); outline-offset:3px; }
+@media (max-width:699px) {
+  .posters { overflow-x:auto; padding-bottom:8px; scrollbar-width:none; }
+  .posters::-webkit-scrollbar { display:none; }
+  .poster { flex:0 0 auto; }
+  .poster-btn img { height:360px; width:auto; }
+}
+
+.transport-block {
+  margin-top:clamp(26px,3.4vw,44px); padding-top:clamp(22px,3vw,34px);
+  border-top:1px solid var(--rule);
+}
+.transport-block .campaign-note { margin:9px 0 18px; }
+.transport { display:grid; grid-template-columns:1fr; gap:clamp(10px,1.4vw,18px); }
+@media (min-width:560px) { .transport { grid-template-columns:repeat(2,1fr); } }
+.transport .cap { font-size:14px; padding:34px 16px 14px; }
+
+.carriers { margin-top:clamp(34px,4.5vw,60px); }
+.carriers-label { margin-bottom:16px; }
+.shots { display:grid; grid-template-columns:repeat(2,1fr); gap:clamp(8px,1.1vw,14px); }
+@media (min-width:700px) { .shots { grid-template-columns:repeat(4,1fr); } }
+.s1 { grid-column:span 2; grid-row:span 2; }
+.shot { margin:0; position:relative; }
+.shot-btn {
+  display:block; width:100%; aspect-ratio:1/1; padding:0; border:0; background:var(--surface);
+  border-radius:14px; overflow:hidden; cursor:zoom-in; line-height:0;
+  box-shadow:0 1px 2px rgba(11,18,32,.06);
+}
+.shot-btn img { width:100%; height:100%; object-fit:cover; transition:transform .4s cubic-bezier(.2,.7,.3,1); }
+.shot-btn:hover img { transform:scale(1.02); }
+.shot-btn:focus-visible { outline:2px solid var(--accent); outline-offset:3px; }
+.cap {
+  position:absolute; left:0; right:0; bottom:0; padding:30px 14px 12px;
+  font-size:12.5px; line-height:1.3; color:#fff; pointer-events:none; border-radius:0 0 14px 14px;
+  background:linear-gradient(to top, rgba(6,10,18,.66), rgba(6,10,18,.28) 55%, rgba(6,10,18,0));
+}
+
+/* ── финал ────────────────────────────────────────────── */
+.outro { padding:clamp(52px,7vw,104px) 0 clamp(64px,9vw,130px); border-top:1px solid var(--rule); }
+.outro-grid { display:grid; gap:clamp(28px,4vw,56px); }
+.outro-grid { max-width:780px; }
+.outro h2 {
+  font-family:"Unbounded",sans-serif; font-weight:500;
+  font-size:clamp(24px,3.4vw,34px); letter-spacing:-.035em; line-height:1.15; margin-bottom:18px;
+}
+.outro p { font-size:16.5px; color:var(--ink2); max-width:60ch; }
+.outro p + p { margin-top:14px; }
+.choices { margin:20px 0 0; padding:0; list-style:none; border-top:1px solid var(--rule); }
+.choices li {
+  display:flex; gap:14px; align-items:baseline; padding:12px 0;
+  border-bottom:1px solid var(--rule); font-size:15px; color:var(--ink2);
+}
+.choices b { flex:0 0 96px; color:var(--ink); font-weight:600; }
+
+/* ── лайтбокс ─────────────────────────────────────────── */
+.lb {
+  position:fixed; inset:0; z-index:80; background:rgba(6,10,18,.88);
+  display:grid; place-items:center; padding:clamp(16px,4vw,48px); gap:14px;
+  grid-template-rows:1fr auto; cursor:zoom-out;
+}
+.lb img { max-width:min(100%,900px); max-height:78vh; border-radius:16px; object-fit:contain; }
+.lb p { color:#C9D3E4; font-size:13px; text-align:center; }
+
+/* ── появление ────────────────────────────────────────── */
+.chapter, .outro { opacity:0; transform:translateY(14px); transition:opacity .6s ease, transform .6s cubic-bezier(.2,.7,.3,1); }
+.chapter.in, .outro.in { opacity:1; transform:none; }
+@media (prefers-reduced-motion: reduce) {
+  .chapter, .outro { opacity:1; transform:none; transition:none; }
+  .shot-btn img, .poster-btn img { transition:none; }
+  html { scroll-behavior:auto; }
+}
+html { scroll-behavior:smooth; }
+</style>
+<style>html{color-scheme:light dark}*{-webkit-text-size-adjust:100%}img{max-width:100%}[hidden]{display:none!important}</style>
+</head>
+<body>
+
+
+<div class="shell">
+  <aside class="rail">
+    <div class="rail-inner">
+      <p class="rail-title">Находкин<span>пять знаков</span></p>
+      <nav class="nav" aria-label="Варианты знака">
+        <a class="nav-item" href="#nahodking" data-target="nahodking"><span class="nav-mark"><img src="img/sym-g19.png" alt=""></span><span class="nav-txt"><b>Находкинг</b><i>Глаз в короне</i></span></a>
+<a class="nav-item" href="#flag" data-target="flag"><span class="nav-mark"><img src="img/sym-g8.png" alt=""></span><span class="nav-txt"><b>Плашка</b><i>Буква Н в плашке</i></span></a>
+<a class="nav-item" href="#pixel" data-target="pixel"><span class="nav-mark"><img src="img/sym-g4.png" alt=""></span><span class="nav-txt"><b>Пиксель</b><i>Пиксельный знак</i></span></a>
+<a class="nav-item" href="#character" data-target="character"><span class="nav-mark"><img src="img/sym-g11.png" alt=""></span><span class="nav-txt"><b>Персонаж</b><i>Одноглазый персонаж</i></span></a>
+<a class="nav-item" href="#ring" data-target="ring"><span class="nav-mark"><img src="img/sym-g13.png" alt=""></span><span class="nav-txt"><b>Кольцо</b><i>Четыре смысла в одной форме</i></span></a>
+      </nav>
+    </div>
+  </aside>
+
+  <main>
+    <header class="hero">
+      <p class="label kicker">Бюро находок · сентябрь 2026</p>
+      <h1>Пять знаков — пять обещаний сервиса</h1>
+      <p class="lede">Слово «Находкин» зарегистрировать нельзя: в базе уже есть «Находка» и «Находкинский». Значит различительную способность надо откуда-то взять — и взять её можно <em>в трёх разных местах</em>.</p>
+      <p class="lede">Можно поменять само слово: «Находкинг» — это уже не «Находкин», и судьба в реестре у него своя. Можно перестроить букву: вытянутая «Н» перестаёт быть шрифтом и становится конструкцией. Можно построить фигуру, которая живёт без слова вообще. Пять вариантов ниже — это три разных ответа на один вопрос.</p>
+      <p class="lede">Знак не пересказывает услугу — этого не делает ни один сильный знак ни в категории, ни за её пределами. Слово объясняет, знак опознаёт. Поэтому по каждому варианту ниже сказано главное: какой характер он даёт бренду, как держится в мелком размере и в каком виде идёт на регистрацию.</p>
+      <div class="crits">
+        <div class="crit"><h4>Своя форма, а не шрифт</h4><p>Буква, взятая из гарнитуры, неохраняема. Она должна быть либо перестроена, либо помещена в фигуру.</p></div>
+<div class="crit"><h4>Не геометка</h4><p>Прямой запрет из заключения поверенного: знак не должен читаться как метка Яндекс.Карт. Сплошная капля остриём вниз исключена; форма с разрывом контура — вопрос к экспертизе, и там, где он есть, это сказано отдельно.</p></div>
+<div class="crit"><h4>Живёт на 16 пикселях</h4><p>Фавикон, аватар, метка на карте. Половина прошлых вариантов не пережила именно эту проверку.</p></div>
+<div class="crit"><h4>Держится в одну краску</h4><p>Чёрным по белому и белым по чёрному. Цвет — сигнал, а не несущая конструкция.</p></div>
+      </div>
+    </header>
+
+    
+<section class="chapter" id="nahodking">
+  <div class="stage">
+    <p class="stage-tag">Ирония и статус</p>
+    <img class="lockup" src="img/lock-g19.png" alt="Логотип «Находкинг»">
+    <div class="sizes">
+      <p class="label">Знак без слова</p>
+      <div class="sizes-row">
+        <span class="sz sz-48"><img src="img/sym-g19.png" alt=""></span>
+        <span class="sz sz-24"><img src="img/sym-g19.png" alt=""></span>
+        <span class="sz sz-16"><img src="img/sym-g19.png" alt=""></span>
+      </div>
+      <p class="sizes-note">48 · 24 · 16 px</p>
+    </div>
+  </div>
+
+  <div class="cols">
+    <div class="idea">
+      <p class="label">Что видит человек</p>
+      <h3 class="glance">Глаз в короне</h3>
+      <p>Главный ход здесь не картинка, а слово. «Находкинг» — это уже не «Находкин»: другое слово, другая проверка в реестре и заодно готовая шутка. Всё остальное достраивается вокруг него: глаз означает, что сервис замечает, корона — что он в категории главный. Король и шут в одном лице: корона даёт и право быть первым, и право шутить.</p>
+<p>Корона с глазом не пересказывает услугу — она задаёт тон. Тон тот же, в котором работают Авиасейлс и Бургер Кинг: сервис уверен в себе настолько, что может шутить. Из пяти вариантов этот даёт бренду голос, а не одну картинку.</p>
+    </div>
+    <dl class="spec">
+      <div class="spec-row"><dt>Различие</dt><dd>Основной запас различительной способности лежит в изменённом слове, а не в фигуре. Сама связка «глаз + корона» в категории не занята никем, глаз построен геометрически, без лица и мимики.</dd></div>
+<div class="spec-row"><dt>Масштаб</dt><dd>На 16 px остаётся силуэт короны над тёмным овалом. Читается, но требует отдельной упрощённой версии для фавикона.</dd></div>
+<div class="spec-row"><dt>Регистрация</dt><dd>Единственный вариант, где имеет смысл подавать две заявки: изобразительную часть отдельно и слово отдельно. «Находкинг» не совпадает ни с «Находка», ни с «Находкинский» — у него есть шанс пройти как словесный знак, и это надо проверять первым делом.</dd></div>
+    </dl>
+  </div>
+
+  <div class="carriers">
+    <p class="label carriers-label">Как это живёт</p>
+    <div class="shots">
+      <figure class="shot s1"><button class="shot-btn" type="button" data-full="img/g19-1.jpg" data-cap="Находкинг — Значок на лацкане"><img src="img/g19-1.jpg" alt="Значок на лацкане" loading="lazy"></button><div class="cap">Значок на лацкане</div></figure><figure class="shot s2"><button class="shot-btn" type="button" data-full="img/g19-2.jpg" data-cap="Находкинг — Наклейка на коробке возврата"><img src="img/g19-2.jpg" alt="Наклейка на коробке возврата" loading="lazy"></button><div class="cap">Наклейка на коробке возврата</div></figure><figure class="shot s3"><button class="shot-btn" type="button" data-full="img/g19-3.jpg" data-cap="Находкинг — QR-метка на телефоне"><img src="img/g19-3.jpg" alt="QR-метка на телефоне" loading="lazy"></button><div class="cap">QR-метка на телефоне</div></figure><figure class="shot s4"><button class="shot-btn" type="button" data-full="img/g19-4.jpg" data-cap="Находкинг — Мобильный интерфейс"><img src="img/g19-4.jpg" alt="Мобильный интерфейс" loading="lazy"></button><div class="cap">Мобильный интерфейс</div></figure><figure class="shot s5"><button class="shot-btn" type="button" data-full="img/g19-5.jpg" data-cap="Находкинг — Планшет"><img src="img/g19-5.jpg" alt="Планшет" loading="lazy"></button><div class="cap">Планшет</div></figure>
+    </div>
+  </div>
+  <div class="campaign"><p class="label">Кампания</p><p class="campaign-note">Знак с характером обязан этот характер где-то тратить. Черновая серия: реплика от первого лица, плоское цветовое поле, персонаж, собранный из самого знака. Формат работает одинаково в ленте, на остановке и на борту транспорта — а транспорт здесь не для красоты: вещи теряют именно в нём. На остальных четырёх вариантах такой тон не соберётся — им нечем шутить.</p><div class="posters"><div class="poster" style="flex-grow:1.0000"><button class="poster-btn" type="button" data-full="img/poster-1.jpg" data-cap="Находкинг — «Опять потерял?»"><img src="img/poster-1.jpg" alt="Постер «Опять потерял?»" loading="lazy"></button></div><div class="poster" style="flex-grow:0.7067"><button class="poster-btn" type="button" data-full="img/poster-2.jpg" data-cap="Находкинг — «Я видел, где ты его оставил»"><img src="img/poster-2.jpg" alt="Постер «Я видел, где ты его оставил»" loading="lazy"></button></div><div class="poster" style="flex-grow:0.6956"><button class="poster-btn" type="button" data-full="img/poster-3.jpg" data-cap="Находкинг — «Твой зонт живёт лучше тебя»"><img src="img/poster-3.jpg" alt="Постер «Твой зонт живёт лучше тебя»" loading="lazy"></button></div><div class="poster" style="flex-grow:0.7122"><button class="poster-btn" type="button" data-full="img/poster-4.jpg" data-cap="Находкинг — «Ну ты и находка»"><img src="img/poster-4.jpg" alt="Постер «Ну ты и находка»" loading="lazy"></button></div><div class="poster" style="flex-grow:0.6956"><button class="poster-btn" type="button" data-full="img/poster-5.jpg" data-cap="Находкинг — «Ты потерял паспорт»"><img src="img/poster-5.jpg" alt="Постер «Ты потерял паспорт»" loading="lazy"></button></div></div><div class="transport-block"><p class="label">Реклама на транспорте</p><p class="campaign-note">Самый точный носитель из всех: вещи теряют именно в транспорте, и реклама попадает в человека ровно в ту секунду, когда он встаёт с сиденья. Борта, поручни и спинки — форматы, которые размещаются каждый день; макеты садятся на лекала перевозчика без переделки.</p><div class="transport"><figure class="shot"><button class="shot-btn" type="button" data-full="img/transport-1.jpg" data-cap="Находкинг — Борт трамвая"><img src="img/transport-1.jpg" alt="Борт трамвая" loading="lazy"></button><div class="cap">Борт трамвая</div></figure><figure class="shot"><button class="shot-btn" type="button" data-full="img/transport-2.jpg" data-cap="Находкинг — Борт троллейбуса"><img src="img/transport-2.jpg" alt="Борт троллейбуса" loading="lazy"></button><div class="cap">Борт троллейбуса</div></figure><figure class="shot"><button class="shot-btn" type="button" data-full="img/transport-3.jpg" data-cap="Находкинг — Наклейка на поручне"><img src="img/transport-3.jpg" alt="Наклейка на поручне" loading="lazy"></button><div class="cap">Наклейка на поручне</div></figure><figure class="shot"><button class="shot-btn" type="button" data-full="img/transport-4.jpg" data-cap="Находкинг — Стикер на спинке сиденья"><img src="img/transport-4.jpg" alt="Стикер на спинке сиденья" loading="lazy"></button><div class="cap">Стикер на спинке сиденья</div></figure></div></div></div>
+</section>
+
+<section class="chapter" id="flag">
+  <div class="stage">
+    <p class="stage-tag">Институция</p>
+    <img class="lockup" src="img/lock-g8.png" alt="Логотип «Плашка»">
+    <div class="sizes">
+      <p class="label">Знак без слова</p>
+      <div class="sizes-row">
+        <span class="sz sz-48"><img src="img/sym-g8.png" alt=""></span>
+        <span class="sz sz-24"><img src="img/sym-g8.png" alt=""></span>
+        <span class="sz sz-16"><img src="img/sym-g8.png" alt=""></span>
+      </div>
+      <p class="sizes-note">48 · 24 · 16 px</p>
+    </div>
+  </div>
+
+  <div class="cols">
+    <div class="idea">
+      <p class="label">Что видит человек</p>
+      <h3 class="glance">Буква Н в плашке</h3>
+      <p>Прямой ответ на требование поверенного: буква живёт внутри фигуры, а не сама по себе. Здесь охраняется ровно то, что видно, — без допущений и без второго дна.</p>
+<p>Диагональ не декоративная. Она вытягивает «Н» так, что литера перестаёт быть шрифтом и становится конструкцией, а сам просвет читается как дорога — короткий путь из точки в точку. Без слова знак работает как монограмма, и большего от монограммы не требуется: никакого объёма, глянца и скруглений, знак учреждения, которое ведёт учёт.</p>
+    </div>
+    <dl class="spec">
+      <div class="spec-row"><dt>Различие</dt><dd>Создаётся формой плашки и углом просвета, а не буквой: буква сама по себе неохраняема. Здесь это перестаёт быть проблемой, потому что охраняется фигура целиком.</dd></div>
+<div class="spec-row"><dt>Масштаб</dt><dd>Две массы и один просвет. Ничего мельче основного штриха, поэтому работает без изменений от 16 px до вывески.</dd></div>
+<div class="spec-row"><dt>Регистрация</dt><dd>Самый чистый случай из пяти. Подаём плашку как изобразительный знак, слово идёт неохраняемым элементом — ровно та же схема, что у знака 65apps.</dd></div>
+    </dl>
+  </div>
+
+  <div class="carriers">
+    <p class="label carriers-label">Как это живёт</p>
+    <div class="shots">
+      <figure class="shot s1"><button class="shot-btn" type="button" data-full="img/g8-1.jpg" data-cap="Плашка — Шеврон на форме"><img src="img/g8-1.jpg" alt="Шеврон на форме" loading="lazy"></button><div class="cap">Шеврон на форме</div></figure><figure class="shot s2"><button class="shot-btn" type="button" data-full="img/g8-2.jpg" data-cap="Плашка — Пломба на коробке"><img src="img/g8-2.jpg" alt="Пломба на коробке" loading="lazy"></button><div class="cap">Пломба на коробке</div></figure><figure class="shot s3"><button class="shot-btn" type="button" data-full="img/g8-3.jpg" data-cap="Плашка — Борт фургона"><img src="img/g8-3.jpg" alt="Борт фургона" loading="lazy"></button><div class="cap">Борт фургона</div></figure><figure class="shot s4"><button class="shot-btn" type="button" data-full="img/g8-4.jpg" data-cap="Плашка — Мобильный интерфейс"><img src="img/g8-4.jpg" alt="Мобильный интерфейс" loading="lazy"></button><div class="cap">Мобильный интерфейс</div></figure><figure class="shot s5"><button class="shot-btn" type="button" data-full="img/g8-5.jpg" data-cap="Плашка — Планшет"><img src="img/g8-5.jpg" alt="Планшет" loading="lazy"></button><div class="cap">Планшет</div></figure>
+    </div>
+  </div>
+  
+</section>
+
+<section class="chapter" id="pixel">
+  <div class="stage">
+    <p class="stage-tag">Цифровое</p>
+    <img class="lockup" src="img/lock-g4.png" alt="Логотип «Пиксель»">
+    <div class="sizes">
+      <p class="label">Знак без слова</p>
+      <div class="sizes-row">
+        <span class="sz sz-48"><img src="img/sym-g4.png" alt=""></span>
+        <span class="sz sz-24"><img src="img/sym-g4.png" alt=""></span>
+        <span class="sz sz-16"><img src="img/sym-g4.png" alt=""></span>
+      </div>
+      <p class="sizes-note">48 · 24 · 16 px</p>
+    </div>
+  </div>
+
+  <div class="cols">
+    <div class="idea">
+      <p class="label">Что видит человек</p>
+      <h3 class="glance">Пиксельный знак</h3>
+      <p>Здесь смысл несёт не силуэт, а материал. Знак собран из пикселей — и слово «цифровое» в дескрипторе становится необязательным, потому что оно уже сказано формой.</p>
+<p>Силуэт при этом допускает несколько прочтений — поиск, метка, кольцо, — и это не слабость: узнают знак по способу сборки, а не по контуру. Тот же приём сразу даёт инструмент на всю айдентику: из этой сетки строятся иконки, паттерн, заставка, анимация. Ни один из остальных четырёх такого продолжения не даёт.</p>
+    </div>
+    <dl class="spec">
+      <div class="spec-row"><dt>Различие</dt><dd>Держится на сетке: размер модуля, шаг, разрывы. Именно это предъявляется поверенному, потому что различает знак не контур, а способ его набора.</dd></div>
+<div class="spec-row"><dt>Масштаб</dt><dd>Ниже 24 px модули сливаются. Нужна вторая версия для фавикона — она строится из той же сетки, крупным шагом.</dd></div>
+<div class="spec-row"><dt>Регистрация</dt><dd>Подаём знак с обязательной фиксацией модульной сетки в описании: она и есть предмет охраны.</dd></div>
+    </dl>
+  </div>
+
+  <div class="carriers">
+    <p class="label carriers-label">Как это живёт</p>
+    <div class="shots">
+      <figure class="shot s1"><button class="shot-btn" type="button" data-full="img/g4-1.jpg" data-cap="Пиксель — Табло над стойкой выдачи"><img src="img/g4-1.jpg" alt="Табло над стойкой выдачи" loading="lazy"></button><div class="cap">Табло над стойкой выдачи</div></figure><figure class="shot s2"><button class="shot-btn" type="button" data-full="img/g4-2.jpg" data-cap="Пиксель — QR-бирка на зонте"><img src="img/g4-2.jpg" alt="QR-бирка на зонте" loading="lazy"></button><div class="cap">QR-бирка на зонте</div></figure><figure class="shot s3"><button class="shot-btn" type="button" data-full="img/g4-3.jpg" data-cap="Пиксель — Метка на ноутбуке"><img src="img/g4-3.jpg" alt="Метка на ноутбуке" loading="lazy"></button><div class="cap">Метка на ноутбуке</div></figure><figure class="shot s4"><button class="shot-btn" type="button" data-full="img/g4-4.jpg" data-cap="Пиксель — Мобильный интерфейс"><img src="img/g4-4.jpg" alt="Мобильный интерфейс" loading="lazy"></button><div class="cap">Мобильный интерфейс</div></figure><figure class="shot s5"><button class="shot-btn" type="button" data-full="img/g4-5.jpg" data-cap="Пиксель — Планшет"><img src="img/g4-5.jpg" alt="Планшет" loading="lazy"></button><div class="cap">Планшет</div></figure>
+    </div>
+  </div>
+  
+</section>
+
+<section class="chapter" id="character">
+  <div class="stage">
+    <p class="stage-tag">Характер</p>
+    <img class="lockup" src="img/lock-g11.png" alt="Логотип «Персонаж»">
+    <div class="sizes">
+      <p class="label">Знак без слова</p>
+      <div class="sizes-row">
+        <span class="sz sz-48"><img src="img/sym-g11.png" alt=""></span>
+        <span class="sz sz-24"><img src="img/sym-g11.png" alt=""></span>
+        <span class="sz sz-16"><img src="img/sym-g11.png" alt=""></span>
+      </div>
+      <p class="sizes-note">48 · 24 · 16 px</p>
+    </div>
+  </div>
+
+  <div class="cols">
+    <div class="idea">
+      <p class="label">Что видит человек</p>
+      <h3 class="glance">Одноглазый персонаж</h3>
+      <p>Это не иллюстрация к услуге, а её исполнитель. Персонаж почти целиком состоит из глаза: смотреть — единственное, что он умеет, и ровно это сервис и делает. Руки, ноги и причёска добавлены затем, чтобы глаз стал кем-то, а не остался иконкой.</p>
+<p>Отличие от Находкинга здесь принципиальное. Там герой вырастает из знака в рекламе, но в самом логотипе его нет. Здесь персонаж и есть логотип: он живёт в шапке сайта, в фавиконе и на бирке, а не только на постере. При этом рта нет, лица нет, пропорции не детские — это герой, а не мультик.</p>
+    </div>
+    <dl class="spec">
+      <div class="spec-row"><dt>Различие</dt><dd>Патентный поверенный отдельно отмечал, что персонажные знаки смешиваются с чужими меньше всего. Из пяти это самый защищённый вариант.</dd></div>
+<div class="spec-row"><dt>Масштаб</dt><dd>Глаз читается на 16 px, силуэт целиком — с 32 px. Краткая версия знака — один глаз без корпуса.</dd></div>
+<div class="spec-row"><dt>Регистрация</dt><dd>Подаём фигуру целиком, отдельной заявкой — глаз как краткую версию. Слово идёт неохраняемым элементом.</dd></div>
+    </dl>
+  </div>
+
+  <div class="carriers">
+    <p class="label carriers-label">Как это живёт</p>
+    <div class="shots">
+      <figure class="shot s1"><button class="shot-btn" type="button" data-full="img/g11-1.jpg" data-cap="Персонаж — Вышивка на кармане"><img src="img/g11-1.jpg" alt="Вышивка на кармане" loading="lazy"></button><div class="cap">Вышивка на кармане</div></figure><figure class="shot s2"><button class="shot-btn" type="button" data-full="img/g11-2.jpg" data-cap="Персонаж — Метка на поводке"><img src="img/g11-2.jpg" alt="Метка на поводке" loading="lazy"></button><div class="cap">Метка на поводке</div></figure><figure class="shot s3"><button class="shot-btn" type="button" data-full="img/g11-3.jpg" data-cap="Персонаж — Витрина пункта выдачи"><img src="img/g11-3.jpg" alt="Витрина пункта выдачи" loading="lazy"></button><div class="cap">Витрина пункта выдачи</div></figure><figure class="shot s4"><button class="shot-btn" type="button" data-full="img/g11-4.jpg" data-cap="Персонаж — Мобильный интерфейс"><img src="img/g11-4.jpg" alt="Мобильный интерфейс" loading="lazy"></button><div class="cap">Мобильный интерфейс</div></figure><figure class="shot s5"><button class="shot-btn" type="button" data-full="img/g11-5.jpg" data-cap="Персонаж — Планшет"><img src="img/g11-5.jpg" alt="Планшет" loading="lazy"></button><div class="cap">Планшет</div></figure>
+    </div>
+  </div>
+  
+</section>
+
+<section class="chapter" id="ring">
+  <div class="stage">
+    <p class="stage-tag">Ёмкость</p>
+    <img class="lockup" src="img/lock-g13.png" alt="Логотип «Кольцо»">
+    <div class="sizes">
+      <p class="label">Знак без слова</p>
+      <div class="sizes-row">
+        <span class="sz sz-48"><img src="img/sym-g13.png" alt=""></span>
+        <span class="sz sz-24"><img src="img/sym-g13.png" alt=""></span>
+        <span class="sz sz-16"><img src="img/sym-g13.png" alt=""></span>
+      </div>
+      <p class="sizes-note">48 · 24 · 16 px</p>
+    </div>
+  </div>
+
+  <div class="cols">
+    <div class="idea">
+      <p class="label">Что видит человек</p>
+      <h3 class="glance">Четыре смысла в одной форме</h3>
+      <p>Самый ёмкий знак из пяти. Одна форма честно держит четыре прочтения сразу — поиск, глаз, реплика в чате и точка на карте. То есть нашёл, увидел, связался, забрал: ровно тот путь, который человек проходит в сервисе, целиком уложенный в одну фигуру.</p>
+<p>Плата за ёмкость — сдержанность. Строчное начертание убирает казённость, но голоса бренду не добавляет: этот знак работает, а не разговаривает. Зато он единственный, кто одинаково хорошо живёт иконкой приложения, меткой на карте и слепым тиснением на коже, не требуя ни второй версии, ни подстройки.</p>
+    </div>
+    <dl class="spec">
+      <div class="spec-row"><dt>Различие</dt><dd>Пропорция кольца и короткий смещённый хвост. Хвост принципиально держать коротким: удлинится — форма начнёт читаться как геометка, а это прямой запрет.</dd></div>
+<div class="spec-row"><dt>Масштаб</dt><dd>Одна замкнутая масса и один крупный просвет — лучшая читаемость на 16 px из всех пяти. Версия для фавикона не нужна.</dd></div>
+<div class="spec-row"><dt>Регистрация</dt><dd>Подаём знак отдельно от слова. К поверенному идём с обоснованием, чем кольцо отличается и от лупы, и от метки, — здесь проверка будет самой придирчивой из пяти.</dd></div>
+    </dl>
+  </div>
+
+  <div class="carriers">
+    <p class="label carriers-label">Как это живёт</p>
+    <div class="shots">
+      <figure class="shot s1"><button class="shot-btn" type="button" data-full="img/g13-1.jpg" data-cap="Кольцо — Тиснение на картхолдере"><img src="img/g13-1.jpg" alt="Тиснение на картхолдере" loading="lazy"></button><div class="cap">Тиснение на картхолдере</div></figure><figure class="shot s2"><button class="shot-btn" type="button" data-full="img/g13-2.jpg" data-cap="Кольцо — Печать на шоппере"><img src="img/g13-2.jpg" alt="Печать на шоппере" loading="lazy"></button><div class="cap">Печать на шоппере</div></figure><figure class="shot s3"><button class="shot-btn" type="button" data-full="img/g13-3.jpg" data-cap="Кольцо — Метка на ремешке часов"><img src="img/g13-3.jpg" alt="Метка на ремешке часов" loading="lazy"></button><div class="cap">Метка на ремешке часов</div></figure><figure class="shot s4"><button class="shot-btn" type="button" data-full="img/g13-4.jpg" data-cap="Кольцо — Мобильный интерфейс"><img src="img/g13-4.jpg" alt="Мобильный интерфейс" loading="lazy"></button><div class="cap">Мобильный интерфейс</div></figure><figure class="shot s5"><button class="shot-btn" type="button" data-full="img/g13-5.jpg" data-cap="Кольцо — Планшет"><img src="img/g13-5.jpg" alt="Планшет" loading="lazy"></button><div class="cap">Планшет</div></figure>
+    </div>
+  </div>
+  
+</section>
+
+    <section class="outro">
+      <div class="outro-grid">
+        <div>
+          <h2>Как выбирать</h2>
+          <p>Вопрос не в том, какой знак нравится. Вопрос в том, с какой мыслью о сервисе вы согласны, — знак идёт следствием.</p>
+          <ul class="choices">
+            <li><b>Находкинг</b><span>мы в категории главные — и единственные, кто может себе позволить шутить</span></li>
+            <li><b>Плашка</b><span>ведём учёт, отвечаем за вещь, работаем как институция</span></li>
+            <li><b>Пиксель</b><span>мы цифровые насквозь — это видно по тому, из чего сделан знак</span></li>
+            <li><b>Персонаж</b><span>за твоими вещами кто-то смотрит; у сервиса есть характер, а не только знак</span></li>
+            <li><b>Кольцо</b><span>нашёл, увидел, связался, забрал — весь путь в одной форме</span></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
+</div>
+
+<script>
+(function () {
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // появление глав
+  var revealables = document.querySelectorAll('.chapter, .outro');
+  if (reduce || !('IntersectionObserver' in window)) {
+    revealables.forEach(function (el) { el.classList.add('in'); });
+  } else {
+    var ro = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) { e.target.classList.add('in'); ro.unobserve(e.target); }
+      });
+    }, { rootMargin: '0px 0px -12% 0px' });
+    revealables.forEach(function (el) { ro.observe(el); });
+  }
+
+  // подсветка активного пункта
+  var items = Array.prototype.slice.call(document.querySelectorAll('.nav-item'));
+  var sections = items.map(function (a) { return document.getElementById(a.dataset.target); });
+  function sync() {
+    var best = 0, bestTop = -Infinity, probe = window.innerHeight * 0.32;
+    sections.forEach(function (s, i) {
+      var t = s.getBoundingClientRect().top;
+      if (t <= probe && t > bestTop) { bestTop = t; best = i; }
+    });
+    items.forEach(function (a, i) { a.classList.toggle('on', i === best && bestTop > -Infinity); });
+  }
+  var ticking = false;
+  window.addEventListener('scroll', function () {
+    if (ticking) return;
+    ticking = true;
+    requestAnimationFrame(function () { sync(); ticking = false; });
+  }, { passive: true });
+  sync();
+
+  // лайтбокс
+  var box = null;
+  function close() { if (box) { box.remove(); box = null; document.removeEventListener('keydown', onKey); } }
+  function onKey(e) { if (e.key === 'Escape') close(); }
+  document.addEventListener('click', function (e) {
+    var btn = e.target.closest('.shot-btn, .poster-btn');
+    if (!btn) return;
+    close();
+    box = document.createElement('div');
+    box.className = 'lb';
+    box.setAttribute('role', 'dialog');
+    box.setAttribute('aria-label', btn.dataset.cap);
+    var img = document.createElement('img');
+    img.src = btn.dataset.full;
+    img.alt = btn.dataset.cap;
+    var cap = document.createElement('p');
+    cap.textContent = btn.dataset.cap + ' · нажмите, чтобы закрыть';
+    box.appendChild(img);
+    box.appendChild(cap);
+    box.addEventListener('click', close);
+    document.body.appendChild(box);
+    document.addEventListener('keydown', onKey);
+  });
+})();
+</script>
+
+</body>
+</html>
