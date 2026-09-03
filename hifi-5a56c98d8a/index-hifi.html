@@ -2,7 +2,14 @@
 <html lang="ru">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <!-- maximum-scale=1 гасит АВТОЗУМ iOS при тапе по полю ввода. Safari зумит,
+         когда шрифт в поле меньше 16 px, а у нас поля 12 и 14 — так в макете,
+         и увеличивать их нельзя. Побочный эффект: щипком страницу не увеличить;
+         в полноэкранном режиме с домашнего экрана он и так был выключен. -->
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"
+    />
     <title>MyZetta — прототип на дизайне</title>
 
     <!-- ПОЛНОЭКРАННЫЙ РЕЖИМ НА ТЕЛЕФОНЕ.
@@ -27,10 +34,10 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap"
       rel="stylesheet"
     />
-    <script type="module" crossorigin src="/myzetta-proto-demo/hifi-5a56c98d8a/assets/hifi-BKk9-BjO.js"></script>
-    <link rel="modulepreload" crossorigin href="/myzetta-proto-demo/hifi-5a56c98d8a/assets/doctors-BXlD1g-o.js">
+    <script type="module" crossorigin src="/myzetta-proto-demo/hifi-5a56c98d8a/assets/hifi-C5ccNaxv.js"></script>
+    <link rel="modulepreload" crossorigin href="/myzetta-proto-demo/hifi-5a56c98d8a/assets/doctors-Dp7pjrDi.js">
     <link rel="stylesheet" crossorigin href="/myzetta-proto-demo/hifi-5a56c98d8a/assets/doctors-Dgihpmma.css">
-    <link rel="stylesheet" crossorigin href="/myzetta-proto-demo/hifi-5a56c98d8a/assets/hifi-Ciy-3mtW.css">
+    <link rel="stylesheet" crossorigin href="/myzetta-proto-demo/hifi-5a56c98d8a/assets/hifi-o75_qB11.css">
   </head>
   <body>
     <div id="root"></div>
